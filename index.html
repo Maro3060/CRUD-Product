@@ -1,18 +1,22 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product CRUD</title>
-    <link rel="shortcut icon" href="images/box.png" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="images/delivery-bag.png"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="css/all.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <nav class="navbar bg-body-tertiary py-3">
+    <nav class="navbar py-3">
       <div class="container">
-        <span class="navbar-brand mb-0 h1">Product Dashboard</span>
+        <span class="navbar-brand mb-0 h1">Dashboard</span>
         <div class="functions">
           <button
             type="button"
@@ -27,81 +31,112 @@
       </div>
     </nav>
 
-    <!-- Modal -->
-    <div
-      class="modal fade modal-dialog modal-dialog-centered modal-dialog-scrollable"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">
-              Add New Product
-            </h1>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+    <main>
+      <div class="container">
+        <header class="my-4">
+          <h1>Product Dashboard</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate,
+            asperiores.
+          </p>
+        </header>
+        <div class="mb-3 seach-box position-relative">
+          <div class="search-icon position-absolute">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
           </div>
-          <div class="modal-body">
-            <h3 class="text-center mb-3">Product Details</h3>
-            <div class="form-floating mb-3">
-              <input
-                type="text"
-                class="form-control"
-                id="floatingInput"
-                placeholder=""
-              />
-              <label for="floatingInputPrice">Product Name</label>
+          <input
+            type="search"
+            class="form-control p-3"
+            id="productSearh"
+            placeholder="Search For Product Name"
+          />
+        </div>
+      </div>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Add New Product
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
             </div>
-            <div class="form-floating mb-3">
-              <input
-                type="text"
-                class="form-control"
-                id="floatingInputPrice"
-                placeholder=""
-              />
-              <label for="floatingInput">Product Price</label>
+
+            <div class="modal-body p-4">
+              <h3 class="text-center mb-3">Product Details</h3>
+
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="productName"
+                  placeholder="Product Name"
+                />
+                <label for="productName">Product Name</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="productPrice"
+                  placeholder="Product Price"
+                  min="0"
+                />
+                <label for="productPrice">Product Price</label>
+              </div>
+
+              <div class="mb-3">
+                <select
+                  class="form-select p-3"
+                  id="productCategory"
+                  aria-label="Product category"
+                >
+                  <option value="" selected disabled>Choose Category</option>
+                  <option value="phones">Phones</option>
+                  <option value="laptops">Laptops</option>
+                  <option value="tvs">TVs</option>
+                </select>
+              </div>
+
+              <div class="form-floating mb-3">
+                <textarea
+                  class="form-control"
+                  placeholder="Leave a Description here"
+                  id="productDesc"
+                  style="height: 100px; resize: none"
+                ></textarea>
+                <label for="productDesc">Description</label>
+              </div>
+
+              <div class="mb-3">
+                <input class="form-control" type="file" id="formFile" />
+              </div>
             </div>
-            <div class="mb-3">
-              <select
-                class="form-select p-3"
-                aria-label="Default select example"
-              >
-                <option selected>Choose Cetegory</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary w-100" id="saveBtn">
+                <i class="fa-solid fa-plus"></i>
+                Add Product
+              </button>
             </div>
-            <div class="form-floating mb-3">
-              <textarea
-                class="form-control"
-                placeholder="Leave a Description here"
-                id="floatingTextarea2"
-                style="height: 100px"
-              ></textarea>
-              <label for="floatingTextarea2">Description</label>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>
-    </div>
+    </main>
+
     <script src="js/all.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/index.js"></script>

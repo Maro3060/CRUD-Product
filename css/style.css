@@ -1,0 +1,86 @@
+@font-face {
+  font-family: plusJakarta;
+  src: url("../webfonts/PlusJakartaSans-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: plusJakarta;
+  src: url("../webfonts/PlusJakartaSans-Italic-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 200 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  /* Backgrounds */
+  --bg-main: #0d111a;
+  --bg-nav: #141a26;
+  --bg-card: #1a2232;
+  --bg-card-hover: #222d42;
+  --border-color: #273248;
+
+  /* Typography */
+  --text-primary: #ffffff;
+  --text-secondary: #8b9bb4;
+
+  /* Brand & Accents */
+  --accent-primary: #2563eb;
+  --accent-cyan: #38bdf8;
+  --accent-purple: #8b5cf6;
+  --accent-green: #10b981;
+  --accent-amber: #f59e0b;
+  --accent-pink: #f43f5e;
+
+  --fs-h1: 1.5rem;
+  --fs-h2: 1.125rem;
+  --fs-body: 0.875rem;
+  --fs-sm: 0.75rem;
+}
+
+body,
+.modal-content {
+  font-family: plusJakarta, sans-serif;
+  font-size: var(--fs-body);
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+}
+
+nav {
+  background-color: var(--bg-nav);
+}
+
+.navbar-brand {
+  color: var(--text-primary);
+}
+
+.form-control,
+.form-select {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.form-control:focus {
+  color: var(--text-primary);
+  background-color: var(--bg-card);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 0.2rem rgb(37 99 235 / 25%);
+}
+
+.form-control::placeholder,
+label {
+  color: var(--text-secondary);
+}
+
+.search-icon {
+  top: 56%;
+  right: 1.2rem;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+  pointer-events: none;
+}
